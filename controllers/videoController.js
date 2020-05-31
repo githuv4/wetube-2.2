@@ -9,41 +9,34 @@ export const home = async (req, res) => {
     console.log(error);
     res.render("home", { pageTitle: "Home", videos: [] });
   }
-
-  // res.send("home");
 };
+
 export const search = (req, res) => {
   const {
-    query: { term: searchingBy },
+    query: { term: searchingBy }
   } = req;
   res.render("search", { pageTitle: "Search", searchingBy, videos });
-  // const searchingBy = req.query.term;
-  // res.render("search", { pageTitle: "Search", searchingBy: term });
-  // res.render("search", { pageTitle: "Search", searchingBy: req.query.term });
 };
-
-export const videosPage = (req, res) =>
-  res.render("videos", { pageTitle: "Videos" });
 
 export const getUpload = (req, res) =>
   res.render("upload", { pageTitle: "Upload" });
+
 export const postUpload = async (req, res) => {
   const {
     body: { title, description },
-    file: { path },
+    file: { path }
   } = req;
   const newVideo = await Video.create({
     fileUrl: path,
     title,
-    description,
+    description
   });
-  console.log(newVideo);
   res.redirect(routes.videoDetail(newVideo.id));
 };
 
 export const videoDetail = async (req, res) => {
   const {
-    params: { id },
+    params: { id }
   } = req;
   try {
     const video = await Video.findById(id);
@@ -55,7 +48,7 @@ export const videoDetail = async (req, res) => {
 
 export const getEditVideo = async (req, res) => {
   const {
-    params: { id },
+    params: { id }
   } = req;
   try {
     const video = await Video.findById(id);
@@ -68,7 +61,7 @@ export const getEditVideo = async (req, res) => {
 export const postEditVideo = async (req, res) => {
   const {
     params: { id },
-    body: { title, description },
+    body: { title, description }
   } = req;
   try {
     await Video.findOneAndUpdate({ _id: id }, { title, description });
@@ -80,11 +73,10 @@ export const postEditVideo = async (req, res) => {
 
 export const deleteVideo = async (req, res) => {
   const {
-    params: { id },
+    params: { id }
   } = req;
   try {
     await Video.findOneAndRemove({ _id: id });
   } catch (error) {}
   res.redirect(routes.home);
-  res.render("deleteVideo", { pageTitle: "Delete Video" });
 };
