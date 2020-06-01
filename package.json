@@ -11,6 +11,7 @@
     "cookie-parser": "^1.4.3",
     "dotenv": "^6.1.0",
     "express": "^4.16.4",
+    "extract-text-webpack-plugin": "^4.0.0-beta.0",
     "helmet": "^3.15.0",
     "mongoose": "^5.3.12",
     "morgan": "^1.9.1",
@@ -21,7 +22,8 @@
   },
   "scripts": {
     "dev:server": "nodemon --exec babel-node init.js",
-    "dev:assets": "webpack"
+    "dev:assets": "WEBPACK_ENV=development webpack",
+    "build:assets": "WEBPACK_ENV=production webpack"
   },
   "devDependencies": {
     "eslint": "^6.8.0",
