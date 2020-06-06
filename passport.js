@@ -17,5 +17,7 @@ passport.use(
   )
 );
 
-passport.serializeUser(User.serializeUser());
-passport.deserializeUser(User.deserializeUser());
+// passport.serializeUser(User.serializeUser());
+passport.serializeUser((User, done) => done(null, User));
+// passport.deserializeUser(User.deserializeUser());
+passport.deserializeUser((User, done) => done(null, User));
