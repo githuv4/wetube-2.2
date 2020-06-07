@@ -32,6 +32,7 @@ const routes = {
   logout: LOGOUT,
   search: SEARCH,
   users: USERS,
+  me: ME,
   userDetail: (id) => {
     if (id) {
       return `/users/${id}`;
