@@ -2,54 +2,7 @@
 @import "config/reset.scss";
 @import "main.scss";
 
+@import "partials/form.scss";
 @import "partials/header.scss";
-
-.header {
-  background-color: $red;
-  margin-bottom: 50px;
-  .header__wrapper {
-    // background-color: lightgray;
-    width: 100%;
-    margin: 0 auto;
-    padding: 5px 10px;
-    max-width: 1200px;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    align-items: center;
-    .header__column {
-      i {
-        color: white;
-        font-size: 40px;
-      }
-      &:nth-child(2) {
-        justify-self: center;
-        width: 100%;
-      }
-      &:last-child {
-        justify-self: end;
-      }
-      ul {
-        display: flex;
-        color: white;
-        font-weight: 200px;
-        li:not(:last-child) {
-          margin-right: 15px;
-        }
-      }
-      form {
-        width: 100%;
-        input {
-          width: 100%;
-          padding: 10px;
-          border-radius: 5px;
-          font-size: 14px;
-          color: #2c2c2c;
-          font-weight: 600;
-          &::placeholder {
-            color: rgba(0, 0, 0, 0.4);
-          }
-        }
-      }
-    }
-  }
-}
+@import "partials/footer.scss";
+@import "partials/socialLogin.scss";
