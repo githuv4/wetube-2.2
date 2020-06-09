@@ -1,3 +1,5 @@
+/* eslint-disable linebreak-style */
+/* eslint-disable quotes */
 import express from "express";
 import morgan from "morgan";
 import helmet from "helmet";
@@ -31,7 +33,9 @@ app.use(
     secret: process.env.COOKIE_SECRET,
     resave: true,
     saveUninitialized: false,
+    // eslint-disable-next-line new-cap
     store: new cookieStore({ mongooseConnection: mongoose.connection }),
+    // eslint-disable-next-line comma-dangle
   })
 );
 app.use(passport.initialize());

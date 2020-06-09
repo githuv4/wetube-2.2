@@ -1,3 +1,4 @@
+/* eslint-disable linebreak-style */
 import passport from "passport";
 import routes from "../routes";
 import User from "../models/User";
@@ -20,7 +21,7 @@ export const postJoin = async (req, res) => {
         email,
       });
       await User.register(user, password);
-      next();
+      // next();
     } catch (error) {
       console.log(error);
     }
@@ -39,7 +40,7 @@ export const githubLogin = passport.authenticate("github");
 
 export const githubLoginCallBack = async (_, __, profile, cb) => {
   const {
-    _json: { id, avatar_url, name, email },
+    _json: { id, avatarUrl, name, email },
   } = profile;
   try {
     const user = await User.findOne({ email });
@@ -52,7 +53,7 @@ export const githubLoginCallBack = async (_, __, profile, cb) => {
       email,
       name,
       githubId: id,
-      avatarUrl: avatar_url,
+      avatarUrl,
     });
     return cb(null, newUser);
   } catch (error) {
@@ -61,6 +62,21 @@ export const githubLoginCallBack = async (_, __, profile, cb) => {
 };
 
 export const postGithubLogIn = (req, res) => {
+  res.redirect(routes.home);
+};
+
+export const facebookLogin = passport.authenticate("facebook");
+
+export const facebookLoginCallback = (
+  accessToken,
+  refreshToken,
+  profile,
+  cb
+) => {
+  console.log(accessToken, refreshToken, profile, cb);
+};
+
+export const postFacebookLogin = (req, res) => {
   res.redirect(routes.home);
 };
 
@@ -73,8 +89,17 @@ export const getMe = (req, res) => {
   res.render("userDetail", { pageTitle: "User Detail", user: req.user });
 };
 
-export const userDetail = (req, res) =>
-  res.render("userDetail", { pageTitle: "User Detail" });
+export const userDetail = async (req, res) => {
+  const {
+    params: { id },
+  } = req;
+  try {
+    const user = await User.findById(id);
+    res.render("userDetail", { pageTitle: "User Detail", user });
+  } catch (error) {
+    res.redirect(routes.home);
+  }
+};
 export const editProfile = (req, res) =>
   res.render("editProfile", { pageTitle: "Edit Profile" });
 export const changePassword = (req, res) =>
