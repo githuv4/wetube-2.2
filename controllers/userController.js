@@ -80,6 +80,7 @@ export const facebookLoginCallback = async (
     const user = await User.findOne({ email });
     if (user) {
       user.facebookId = id;
+      user.avatarUrl = `http://http://graph.facebook.com/${id}/picture?type=large`;
       user.save();
       return cb(null, user);
     }
