@@ -141,5 +141,25 @@ export const postEditProfile = async (req, res) => {
   }
 };
 
-export const changePassword = (req, res) =>
+export const getChangePassword = (req, res) =>
   res.render("changePassword", { pageTitle: "Change Password" });
+
+export const postChangePassword = async (req, res) => {
+  const {
+    body: { oldPassword, newPassword, newPassword1 },
+  } = req;
+  try {
+    if (newPassword !== newPassword1) {
+      res.status(400);
+      res.render("changePassword", { pageTitle: "Change Password" });
+      console.log("not match");
+      return;
+    }
+    await req.user.changePassword(oldPassword, newPassword);
+    console.log("done");
+    res.redirect(routes.me);
+  } catch (error) {
+    res.render("changePassword", { pageTitle: "Change Password" });
+    console.log("error");
+  }
+};
