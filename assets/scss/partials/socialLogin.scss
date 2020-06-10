@@ -10,11 +10,6 @@
   a {
     button {
       color: white;
-      outline: none;
-
-      &:active {
-        transform: scale(0.99);
-      }
       font-weight: 400;
       i {
         margin-right: 10px;

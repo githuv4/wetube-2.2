@@ -140,6 +140,12 @@ input {
   input:focus, input:active {
     outline: none; }
 
+.u-avatar {
+  width: 80px;
+  -webkit-border-radius: 50%;
+     -moz-border-radius: 50%;
+          border-radius: 50%; }
+
 html,
 body {
   height: 100%; }
@@ -155,23 +161,30 @@ main {
   max-width: 1400px;
   margin: 0 auto;
   min-height: 70vh; }
-
-button {
-  display: block;
-  width: 100%;
-  border: none;
-  padding: 10px;
-  -webkit-border-radius: 5px;
-     -moz-border-radius: 5px;
-          border-radius: 5px;
-  font-size: 14px;
-  color: #2c2c2c;
-  font-weight: 600;
-  -webkit-box-shadow: 0 1px 3px rgba(155, 128, 128, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-     -moz-box-shadow: 0 1px 3px rgba(155, 128, 128, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-          box-shadow: 0 1px 3px rgba(155, 128, 128, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24); }
-  button:not(:last-child) {
-    margin-bottom: 25px; }
+  main button {
+    display: block;
+    width: 100%;
+    max-width: 320px;
+    border: none;
+    padding: 10px;
+    -webkit-border-radius: 5px;
+       -moz-border-radius: 5px;
+            border-radius: 5px;
+    outline: none;
+    font-size: 14px;
+    color: #2c2c2c;
+    font-weight: 600;
+    -webkit-box-shadow: 0 1px 3px rgba(155, 128, 128, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+       -moz-box-shadow: 0 1px 3px rgba(155, 128, 128, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+            box-shadow: 0 1px 3px rgba(155, 128, 128, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24); }
+    main button:not(:last-child) {
+      margin-bottom: 25px; }
+    main button:active {
+      -webkit-transform: scale(0.99);
+         -moz-transform: scale(0.99);
+          -ms-transform: scale(0.99);
+           -o-transform: scale(0.99);
+              transform: scale(0.99); }
 
 .form-container {
   width: 100%;
@@ -338,14 +351,7 @@ button {
     background-color: #415e9b; }
   .social-login a button {
     color: white;
-    outline: none;
     font-weight: 400; }
-    .social-login a button:active {
-      -webkit-transform: scale(0.99);
-         -moz-transform: scale(0.99);
-          -ms-transform: scale(0.99);
-           -o-transform: scale(0.99);
-              transform: scale(0.99); }
     .social-login a button i {
       margin-right: 10px;
       font-size: 20px; }
@@ -353,3 +359,66 @@ button {
       margin-bottom: 15px; }
   .social-login a:visited {
     color: white; }
+
+.form-container,
+.user-profile {
+  width: 100%; }
+  .form-container .user-profile__header,
+  .user-profile .user-profile__header {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+       -moz-box-orient: vertical;
+       -moz-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+       -moz-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin-bottom: 20px; }
+    .form-container .user-profile__header .profile__username,
+    .user-profile .user-profile__header .profile__username {
+      margin-top: 10px;
+      font-size: 18px; }
+  .form-container .user-profile__btns,
+  .user-profile .user-profile__btns {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+       -moz-box-orient: vertical;
+       -moz-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+       -moz-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+       -moz-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center; }
+    .form-container .user-profile__btns a,
+    .form-container .user-profile__btns a:visited,
+    .user-profile .user-profile__btns a,
+    .user-profile .user-profile__btns a:visited {
+      color: white; }
+    .form-container .user-profile__btns button,
+    .user-profile .user-profile__btns button {
+      background-color: #3498db;
+      margin-bottom: 20px;
+      color: white;
+      width: 320px; }
