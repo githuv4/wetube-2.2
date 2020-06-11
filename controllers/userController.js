@@ -159,6 +159,7 @@ export const postChangePassword = async (req, res) => {
     console.log("done");
     res.redirect(routes.me);
   } catch (error) {
+    res.status(400);
     res.render("changePassword", { pageTitle: "Change Password" });
     console.log("error");
   }

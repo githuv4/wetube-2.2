@@ -186,6 +186,131 @@ main {
            -o-transform: scale(0.99);
               transform: scale(0.99); }
 
+.videos video {
+  width: 600px; }
+
+.form-container,
+.user-profile {
+  width: 100%; }
+  .form-container .user-profile__header,
+  .user-profile .user-profile__header {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+       -moz-box-orient: vertical;
+       -moz-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+       -moz-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin-bottom: 20px; }
+    .form-container .user-profile__header .profile__username,
+    .user-profile .user-profile__header .profile__username {
+      margin-top: 10px;
+      font-size: 18px; }
+  .form-container .user-profile__btns,
+  .user-profile .user-profile__btns {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+       -moz-box-orient: vertical;
+       -moz-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+       -moz-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+       -moz-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center; }
+    .form-container .user-profile__btns a,
+    .form-container .user-profile__btns a:visited,
+    .user-profile .user-profile__btns a,
+    .user-profile .user-profile__btns a:visited {
+      color: white; }
+    .form-container .user-profile__btns button,
+    .user-profile .user-profile__btns button {
+      background-color: #3498db;
+      margin-bottom: 20px;
+      color: white;
+      width: 320px; }
+
+main {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+     -moz-box-orient: vertical;
+     -moz-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+     -moz-box-align: center;
+      -ms-flex-align: center;
+          align-items: center; }
+  main .video-wrapper .video__container {
+    width: 100%;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+       -moz-box-orient: vertical;
+       -moz-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: start;
+    -webkit-align-items: flex-start;
+       -moz-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start; }
+    main .video-wrapper .video__container video {
+      width: 600px; }
+    main .video-wrapper .video__container button {
+      margin-bottom: 10px; }
+    main .video-wrapper .video__container .video__info {
+      margin-bottom: 30px; }
+      main .video-wrapper .video__container .video__info .video__title {
+        font-weight: 600; }
+      main .video-wrapper .video__container .video__info .video__description {
+        margin-top: 10px; }
+  main .video-wrapper .video__comments {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+       -moz-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center; }
+
 .form-container {
   width: 100%;
   display: -webkit-box;
@@ -359,66 +484,3 @@ main {
       margin-bottom: 15px; }
   .social-login a:visited {
     color: white; }
-
-.form-container,
-.user-profile {
-  width: 100%; }
-  .form-container .user-profile__header,
-  .user-profile .user-profile__header {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -webkit-flex-direction: column;
-       -moz-box-orient: vertical;
-       -moz-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-align: center;
-    -webkit-align-items: center;
-       -moz-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    margin-bottom: 20px; }
-    .form-container .user-profile__header .profile__username,
-    .user-profile .user-profile__header .profile__username {
-      margin-top: 10px;
-      font-size: 18px; }
-  .form-container .user-profile__btns,
-  .user-profile .user-profile__btns {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -webkit-flex-direction: column;
-       -moz-box-orient: vertical;
-       -moz-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-align: center;
-    -webkit-align-items: center;
-       -moz-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-pack: center;
-    -webkit-justify-content: center;
-       -moz-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center; }
-    .form-container .user-profile__btns a,
-    .form-container .user-profile__btns a:visited,
-    .user-profile .user-profile__btns a,
-    .user-profile .user-profile__btns a:visited {
-      color: white; }
-    .form-container .user-profile__btns button,
-    .user-profile .user-profile__btns button {
-      background-color: #3498db;
-      margin-bottom: 20px;
-      color: white;
-      width: 320px; }
