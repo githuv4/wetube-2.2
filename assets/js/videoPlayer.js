@@ -82,7 +82,7 @@ const formatDate = seconds => {
 //--
 
 function getCurrentTime() {
-  currentTime.innerHTML = formatDate(videoPlayer.currentTime);
+  currentTime.innerHTML = formatDate(Math.floor(videoPlayer.currentTime));
 }
 
 function setTotalTime() {
@@ -91,6 +91,11 @@ function setTotalTime() {
   setInterval(getCurrentTime, 1000);
 }
 
+function handleEnded () {
+  console.log("ended")
+  videoPlayer.currentTime = 0;
+  volumeBtn.innerHTML = '<i class="fas fa-play"></i>';
+}
 
 
 function init() {
@@ -99,6 +104,7 @@ function init() {
   volumeBtn.addEventListener("click", handleVolumeClick);
   fullScrnBtn.addEventListener("click", goFullScreen);
   videoPlayer.addEventListener("loadedmetadata", setTotalTime);
+  videoPlayer.addEventListener("ended", handleEnded);
   
   setTotalTime();
 } 
