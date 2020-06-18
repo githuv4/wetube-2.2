@@ -2,6 +2,7 @@ const videoContainer = document.getElementById("jsVideoPlayer");
 const videoPlayer = document.querySelector("#jsVideoPlayer video");
 const playBtn = document.getElementById("jsPlayButton");
 const volumeBtn = document.getElementById("jsVolumeBtn");
+const volumeRange = document.getElementById("jsVolume");
 const fullScrnBtn = document.getElementById("jsFullScreen");
 const currentTime = document.getElementById("currentTime");
 const totalTime = document.getElementById("totalTime");
@@ -20,7 +21,9 @@ function handleVolumeClick() {
   if (videoPlayer.muted) {
     videoPlayer.muted = false;
     volumeBtn.innerHTML = `<i class="fas fa-volume-up"></i>`;
+    volumeRange.value = videoPlayer.volume;
   } else {
+    volumeRange.value=0;
     videoPlayer.muted = true;
     volumeBtn.innerHTML = '<i class="fas fa-volume-mute"></i>';
   }
@@ -97,14 +100,30 @@ function handleEnded () {
   volumeBtn.innerHTML = '<i class="fas fa-play"></i>';
 }
 
+function handleDrag(event){
+  console.log(event);
+  const {
+    target:{value}
+  }=event;
+  videoPlayer.volume = value;
+  if(value >= 7) {
+    volumeBtnn.innerHTML = `<i class="fas fa-volume-up"></i>`
+  } else if(value>=4){
+    volumeBtnn.innerHTML = `<i class="fas fa-volume-up"></i>`
+  } else {
+    volumeBtnn.innerHTML = `<i class="fas fa-volume-up"></i>`
+  }
+}
 
 function init() {
+  videoPlayer.volume= 5;
   playBtn.addEventListener("click", handlePlayClick);
   videoPlayer.addEventListener("click", handlePlayClick);
   volumeBtn.addEventListener("click", handleVolumeClick);
   fullScrnBtn.addEventListener("click", goFullScreen);
   videoPlayer.addEventListener("loadedmetadata", setTotalTime);
   videoPlayer.addEventListener("ended", handleEnded);
+  volumeRange.addEventListener("input", handleDrag)
   
   setTotalTime();
 } 
