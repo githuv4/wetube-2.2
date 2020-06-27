@@ -122,7 +122,7 @@ function handleDrag(event) {
 }
 
 function init() {
-  videoPlayer.volume = 5;
+  videoPlayer.volume = 0.5;
   playBtn.addEventListener("click", handlePlayClick);
   videoPlayer.addEventListener("click", handlePlayClick);
   volumeBtn.addEventListener("click", handleVolumeClick);
