@@ -1,6 +1,7 @@
 /* eslint-disable linebreak-style */
 /* eslint-disable quotes */
 import express from "express";
+import path from "path";
 import morgan from "morgan";
 import helmet from "helmet";
 import cookieParser from "cookie-parser";
@@ -23,8 +24,9 @@ const cookieStore = mongoStore(session);
 
 app.use(helmet());
 app.set("view engine", "pug");
-app.use("/uploads", express.static("uploads"));
-app.use("/static", express.static("static"));
+app.set("views", path.join(__dirname, "views"));
+app.use("/1-main/uploads", express.static("/1-main/uploads"));
+app.use("/1-main/static", express.static("1-main/static"));
 app.use(cookieParser());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));

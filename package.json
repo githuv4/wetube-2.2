@@ -37,6 +37,7 @@
     "webpack-cli": "^3.3.11"
   },
   "scripts": {
+    "start:1": "nodemon --exec babel-node 1-main/init.js",
     "dev:server": "nodemon --exec babel-node init.js",
     "dev:assets": "set WEBPACK_ENV=development&&webpack -w",
     "build:assets": "set WEBPACK_ENV=production webpack",
