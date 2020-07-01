@@ -1,0 +1,14 @@
+extends layouts/main
+
+block content
+    h1=pageTitle
+    .video__player
+        video(src=`/${video.fileUrl}`)
+    .video__info
+        a(href=`/videos${routes.editVideo}`) 
+            button Edit Video
+        a(href=`/videos${routes.deleteVideo}`)
+            button Delete Video
+        h2=video.title
+        p=video.description
+        p=video.views

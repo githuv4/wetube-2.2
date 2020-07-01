@@ -38,6 +38,11 @@
   },
   "scripts": {
     "start:1": "nodemon --exec babel-node 1-main/init.js",
+    "start:2": "nodemon --exec babel-node 2-focused/2/init.js",
+    "start:3": "nodemon --exec babel-node 2-focused/3/init.js",
+    "start:f5": "nodemon --exec babel-node 2-focused/f5/init.js",
+    "start:f7": "nodemon --exec babel-node 2-focused/f7/init.js",
+    "start:f10": "nodemon --exec babel-node 2-focused/f10/init.js",
     "dev:server": "nodemon --exec babel-node init.js",
     "dev:assets": "set WEBPACK_ENV=development&&webpack -w",
     "build:assets": "set WEBPACK_ENV=production webpack",

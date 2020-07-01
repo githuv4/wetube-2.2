@@ -1,0 +1,18 @@
+extends layouts/main
+include mixins/videoBlock
+
+block content
+    H2=pageTitle 
+    .videos
+        each item in videos
+            +videoBlock3({
+                id:item.id,
+                fileUrl:item.fileUrl,
+                title:item.title,
+                description:item.description,
+                views:item.views
+            })
+    
+
+        
+
