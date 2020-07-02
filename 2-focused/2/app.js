@@ -1,4 +1,5 @@
 import express from "express";
+import path from "path";
 import morgan from "morgan";
 import helmet from "helmet";
 import cookieParser from "cookie-parser";
@@ -12,7 +13,9 @@ import { localsMiddleware } from "./localsMiddleware";
 const app = express();
 
 app.set("view engine", "pug");
-app.use("/uploads", express.static("uploads"));
+app.set("views", path.join(__dirname, "views"));
+app.use("/2-focused/2/uploads", express.static("/2-focused/2/uploads"));
+// app.use("/1-main/static", express.static("1-main/static"));
 app.use(helmet());
 app.use(cookieParser());
 app.use(bodyParser.json());

@@ -1,7 +1,7 @@
 import multer from "multer";
 import routes from "./routes";
 
-const multerVideo = multer({ dest: "uploads/videos/" });
+const multerVideo = multer({ dest: "/2-focused/2/uploads/videos/" });
 
 export const localsMiddleware = (req, res, next) => {
   res.locals.routes = routes;
