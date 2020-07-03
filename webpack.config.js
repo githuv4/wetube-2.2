@@ -5,12 +5,12 @@ const MODE = process.env.WEBPACK_ENV;
 const ENTRY_FILE = path.resolve(
   __dirname,
   "2-focused",
-  "2",
+  "f5",
   "assets",
   "js",
   "main.js"
 );
-const OUTPUT_DIR = path.join(__dirname, "2-focused", "2", "static");
+const OUTPUT_DIR = path.join(__dirname, "2-focused", "f5", "static");
 
 const config = {
   entry: ENTRY_FILE,
